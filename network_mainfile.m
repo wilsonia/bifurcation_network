@@ -1,9 +1,7 @@
-
-run network_geometry
 run network_params
 run network_initialize
 
-for j=1:timesteps
+for j=1:timesteps;
     
 
     if perturbtype==1&rem(j,perturb_int)==0||perturbtype==2&j==years_perturb/dt_years
@@ -116,7 +114,7 @@ for j=1:timesteps
         Q_save(:,j/saveinterval)=Q';
         eta_save(:,j/saveinterval)=eta(1,:)';
         Qs_save(:,j/saveinterval)=Qs(2,:)';
-        etad_save(:,j/saveinterval)=nansum(eta(2:end,:),1);
+        etad_save(:,j/saveinterval)=sum(eta(2:end,:),1);
         end
         if rem(j,completesaveinterval)==0;
             eta_completesave(:,:,j/completesaveinterval)=eta;
@@ -140,4 +138,3 @@ for j=1:timesteps
         end
     
 end
-t_save_star=t_save*(1/(1-lamp))*timeyear*(1-Fnew)*(Qs(1,1)/sum(L.*B))/H(1,1);

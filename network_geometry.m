@@ -6,7 +6,8 @@ Adjacency([6,7],3)=1;
 B=[100 70 70 50 50 50 50];%width of channel downstream of each node
 
 alpha=3;
-L=3*B.*[6 11 11 23 23 23 23];%length of each branch downstream of node
+%L=3*B.*[6 11 11 23 23 23 23];%length of each branch downstream of node
+L = [1800, 2310, 2310, 3450, 3450, 3450, 3450];
 
 Ncells=1*[20 40 40 80 80 80 80];
 

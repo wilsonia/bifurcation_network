@@ -39,12 +39,11 @@ down_bc=3;%set downstream b.c.
 nonconst_chezy=0;%1 to have chezy coefficent which varies with depth
 sealevel_mode=0;%1 to have time varying sea level in each branch
 channelbelt=0;%0 =width is channel width, 1= specified width, 2= specified angle (radial)
-reset_topo=1;%reset current topography? 1=yes, 0=no, 
+reset_topo=0;%reset current topography? 1=yes, 0=no, 
 H123_set=0;%if 0, H1 is substituded for H123
 xi_down=0;%if 0 (default) xi computed only with eta(1), if 1, use (eta(1)+eta(2))/2
 makeplots=0;
 makemovie=0;
-
 
 %% set switch specific parameters
 %sediment transport formula
@@ -99,5 +98,4 @@ H1=B1/asp_rat;
 ds=S1*H1/(Rr*taus1);
 Q1=sqrt(((H1^2)*((B1^2)*(Cz1^2)*taus1*(ps-p)*g*ds))/p);
 Qs1=(n*(taus1-tausc).^m)*((Rr * g * ds) ^ 0.5) * ds*B1;
-
 

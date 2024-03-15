@@ -1,5 +1,3 @@
-
-
 if reset_topo==1;
     startslope=1*10^-3;
     eta=-x*startslope;
@@ -52,5 +50,4 @@ mass_initial=(dx.*B_belt)*sum(eta(2:max(Ncells),:),1)'+(dx_up.*B_belt)*eta(1,:)'
 
 eta_completesave=zeros(max(Ncells),nodes,timesteps/completesaveinterval);
 Qs_completesave=zeros(max(Ncells)+1,nodes,timesteps/completesaveinterval);;
-
 
